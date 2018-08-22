@@ -64,11 +64,6 @@ def book_show(showtime_details):
             span.log_kv({'event': 'CheckCinema' , 'value': showtime_details })
             print(Ticket_details)
 
-def http_get(url):
-    span = get_current_span()
-    r = requests.get(url)
-    return r.text
-
 assert len(sys.argv) == 2
 tracer = init_tracer('booking')
 movie = sys.argv[1]
